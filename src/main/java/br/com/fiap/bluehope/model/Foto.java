@@ -5,10 +5,12 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 import org.springframework.hateoas.EntityModel;
 
+import br.com.fiap.bluehope.controller.FotoController;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.NotBlank;
@@ -26,7 +28,7 @@ public class Foto {
     @NotNull
     private String caminhoFoto;
 
-    @OneToMany
+    @ManyToOne
     private Desafio desafio;
 
     public EntityModel<Foto> toEntityModel() {

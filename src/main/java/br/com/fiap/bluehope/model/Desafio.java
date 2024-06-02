@@ -5,13 +5,13 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 import org.springframework.hateoas.EntityModel;
 
-import br.com.fiap.bluehope.controller.PerfilController;
+import br.com.fiap.bluehope.controller.DesafioController;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
 import lombok.Data;
@@ -33,7 +33,7 @@ public class Desafio {
     // TODO tipo desafio
     // private TipoDesafio tipo;
 
-    @OneToMany
+    @ManyToOne
     private Perfil perfil;
 
     public EntityModel<Desafio> toEntityModel() {
