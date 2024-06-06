@@ -13,6 +13,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.PositiveOrZero;
 import lombok.Data;
 
 @Data
@@ -26,10 +27,9 @@ public class Perfil {
     @NotBlank
     private String nome;
 
-    @Positive
+    @PositiveOrZero
     private int somaPontos;
 
-    @NotBlank
     private String medalha;
 
     @OneToOne
