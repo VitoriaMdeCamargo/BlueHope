@@ -41,11 +41,11 @@ public class Desafio {
                 this,
                 linkTo(methodOn(DesafioController.class).show(id)).withSelfRel(),
                 linkTo(methodOn(DesafioController.class).destroy(id)).withRel("delete"),
-                linkTo(methodOn(DesafioController.class).index()).withRel("contents"));
+                linkTo(methodOn(DesafioController.class).index(null)).withRel("contents"));
     }
 
     public EntityModel<Desafio> toModel() {
         return EntityModel.of(this,
-                linkTo(methodOn(DesafioController.class).index()).withRel("contents"));
+                linkTo(methodOn(DesafioController.class).index(null)).withRel("contents"));
     }
 }

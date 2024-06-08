@@ -5,6 +5,8 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 import org.springframework.hateoas.EntityModel;
 
+import br.com.fiap.bluehope.validation.TipoMedalha;
+
 import br.com.fiap.bluehope.controller.PerfilController;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -30,6 +32,7 @@ public class Perfil {
     @PositiveOrZero
     private int somaPontos;
 
+    @TipoMedalha
     private String medalha;
 
     @OneToOne

@@ -30,6 +30,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
@@ -75,7 +76,7 @@ public class PerfilController {
             @ApiResponse(responseCode = "201", description = "Perfil cadastrado com sucesso"),
             @ApiResponse(responseCode = "400", description = "Dados enviados são inválidos. Verifique o corpo da requisição", useReturnTypeSchema = false)
     })
-    public Perfil create(@RequestBody Perfil perfil) {
+    public Perfil create(@RequestBody @Valid Perfil perfil) {
         log.info("Cadastrando perfil {}", perfil);
         return repository.save(perfil);
     }
